@@ -54,27 +54,31 @@
 
         <div class="form-USR col-md-6"> 
           <label for="uName">2. Enter your first name?</label>
-          <input ng-model="profile.firstName" type="text" class="form-control" id="firstName" placeholder="First Name"  autofocus autocomplete="on" 
-
-required >
+          <input ng-model="profile.firstName" type="text" class="form-control" id="firstName" placeholder="First Name"  autofocus autocomplete="on" required>
 	</div>
 
 	<div class="form-USR col-md-6">
 	  <label for="uName">3. Enter your last name?</label>
-          <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name"   autocomplete="on">          
+          <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name"   autocomplete="on" required>          
         </div>
 
-       <div class="form-USR col-md-6">
-          <label for="userEmail">4. Enter your email address?</label>
-          <input ng-model="profile.userEmail" type="email"class="form-control" id="userEmail" placeholder="Email address" >
+        <div class="form-USR col-md-6">
+          
+	  <label for="userEmail">4. Enter your State Department email address?</label>
+
+          <input ng-model="profile.userEmail" type="email"class="form-control" id="userEmail" placeholder="government.email@address" >
+
           <span class="help-block"></span>
+
         </div>
       
     	<div class="form-USR col-md-6">
           <label for="post">5. Enter your Position?</label>          
           <input ng-model="profile.posTyp" class="form-control" id="posTyp" placeholder="Position with State" autocomplete="on">
           <span class="help-block"></span>
-        </div>        
+        </div>
+
+
 
         <div class="form-USR col-md-6">
           <label for="post"> 6. CA Employee or Contractor?</label><br>
@@ -91,6 +95,27 @@ required >
           <input ng-model="profile.contName" class="form-control" id="contName" placeholder="company" autocomplete="on">
           <span class="help-block"></span>
         </div>
+
+<div ng-controller="StaticCtrl">
+    <p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
+    <div>
+        <h4>Mission:</h4> 
+        <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries">
+          <option value=''>Select</option>
+        </select>
+    </div>
+    <div>
+        <h4>Country:</h4>
+	 <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities">
+	<option value=''>Select</option></select>
+    </div>
+    <div>
+        <h4>Post:</h4>
+	 <select class="form-control" id="suburb" ng-disabled="!suburbs" ng-model="suburb" ng-options="suburb for suburb in suburbs">
+	<option value=''>Select</option></select>        
+    </div>
+	<p>TEST Content</p>
+  </div>
 
 
 <h3>Summary of qualifications:</h3>
@@ -156,9 +181,9 @@ required >
         <button class="btn btn-lg btn-primary"onClick="history.go(0)"type="Clear">Reset Form Data</button>
 
       </form>
-<p>Upon approval of this application, you will be granted a renewable 12 month license to access CA&#39s GitLab. Your access is at will and can be 
+<p>Upon approval of this application, you will be granted a renewable 12 month license to access CA&#39s GitLab. Your access is at will and can be revoked at any time by 
 
-revoked at any time by CA, most likely due to either improper use of GitLab or lack of constructive activity.</p>    
+CA, most likely due to either improper use of GitLab or lack of constructive activity.</p>    
       
 </div>
 
