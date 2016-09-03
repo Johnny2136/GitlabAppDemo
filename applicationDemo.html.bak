@@ -27,10 +27,13 @@
 {{profile.empDate}}
 {{profile.govCont}}
 {{profile.contName}}
+{{profile.reason}}
 {{profile.coder}}
 {{profile.coderDes}}
 {{profile.proCoder}}
 {{profile.proCoderDes}}
+{{profile.cmExp}}
+{{profile.cmExpDes}}
 
 <h1><img src="images/1086321.png" alt="Smiley face" width="75" height="75">GitLab User Application</h1>
   
@@ -119,7 +122,9 @@
 <h3>Why do you want a GitLab account?</h3>
 <div class="form-USR row-md-3"> 
           <label for="post">Please enter reason for wanting an account</label>
-          <input ng-model="profile.coder" class="form-control" id="coder" placeholder="Yes / No" autocomplete="on">          
+          <input ng-model="profile.reason" class="form-control" id="reason" placeholder="why do you want access?" autocomplete="on">          
+		  <textarea ng-model="profile.reason" class="form-control" ng-trim="false" placeholder="why do you want access?" maxlength="200"></textarea>
+		   <span>{{200 - profile.reason}} left</span>
           <span class="help-block"></span>
         </div>
 

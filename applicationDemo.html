@@ -27,6 +27,7 @@
 {{profile.empDate}}
 {{profile.govCont}}
 {{profile.contName}}
+{{profile.reason}}
 {{profile.coder}}
 {{profile.coderDes}}
 {{profile.proCoder}}
@@ -121,8 +122,9 @@
 <h3>Why do you want a GitLab account?</h3>
 <div class="form-USR row-md-3"> 
           <label for="post">Please enter reason for wanting an account</label>
-          <input ng-model="profile.coder" class="form-control" id="coder" placeholder="Yes / No" autocomplete="on">          
-          <span class="help-block"></span>
+          <!-- Added TextFeild for Reason why user wants an account... JJ -->         
+		  <textarea ng-model="profile.reason" class="form-control" ng-trim="false" placeholder="why do you want access?" maxlength="1500" autocomplete="on"></textarea>
+		   <span class="help-block"></span>
         </div>
 
 <h3>Summary of qualifications:</h3>
