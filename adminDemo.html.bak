@@ -4,10 +4,10 @@
 <head>
     <title>GitLab Admin Reporting</title>
 	<link rel="shortcut icon" href="images/favicon.ico">
-	<script src="Script/jquery-3.1.0.js"></script>
+	<script src="script/jquery-3.1.0.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-3.1.1/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="Script/jquery.dataTables.css"/>
+    <link rel="stylesheet" href="script/jquery.dataTables.css"/>
 
     <style>
         .tableOdd {
@@ -17,8 +17,8 @@
             background-color: gold;
         }
     </style>
-<script src="Script/angular.min.js" type="text/javascript"></script>        
-        <script src="Script/reportingApp.js"></script>
+<script src="script/angular.min.js" type="text/javascript"></script>        
+        <script src="script/reportingApp.js"></script>
 <script type="text/javascript" cf-async="false">var _ezaq = {"ab_test_id":"mod9","ab_test_val":"","adgroup_rank_id":-2,"country":"US","device_height":528,"device_width":1280,"domain_id":24862,"forensiq_score":-1,"form_factor_id":1,"ip":"169.253.194.1","landing_page_url":"http://johnny134ap.tripod.com/GitlabApp/applicationDemo.html","page_view_id":"d51a42cf-ba9b-492e-4cd6-37b9fd868bef","pv_event_count":0,"referrer_id":0,"referring_domain":"lycos.com","region":"us-east-1","serverid":"54.80.219.71:20532","t_epoch":1472662505,"template_id":0,"url":"http://johnny134ap.tripod.com/GitlabApp/adminDemo.html","user_agent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36","user_id":1950788260,"visit_id":1875323336,"visit_uuid":"0469e488-f751-4bb8-7af6-a357ad83d2ae"};var _ezExtraQueries = "&ez_orig=1";</script><script data-cfasync='false' type="text/javascript" src="/ezoic/imp2.js?cb=123-0&v=1"></script>
 <script data-cfasync="false" type="text/javascript">window.google_analytics_uacct = "UA-80599851-35";</script>
 <script data-cfasync="false" type="text/javascript">
