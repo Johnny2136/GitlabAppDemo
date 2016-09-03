@@ -31,8 +31,6 @@
 {{profile.coderDes}}
 {{profile.proCoder}}
 {{profile.proCoderDes}}
-{{profile.cmExp}}
-{{profile.cmExpDes}}
 
 <h1><img src="images/1086321.png" alt="Smiley face" width="75" height="75">GitLab User Application</h1>
   
