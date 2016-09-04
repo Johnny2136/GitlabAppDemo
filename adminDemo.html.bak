@@ -58,6 +58,8 @@
             <td><span>{{data.proCoderDes}}</span></td>
             <td><span>{{data.cmExp}}</span></td>
             <td><span>{{data.cmExpDes}}</span></td>
+			<td><span>{{data.approve}}</span></td>
+			<td><span>{{data.appDate}}</span></td>
             
         </tr>
 
