@@ -19,18 +19,24 @@
 <body data-ng-controller="entryCtrl" style="padding:9px;">
 <!-- Header Section -->
 <p>(TODO:Test remove prior to deployment) Data being stringafied and sent to MongoDB Should appear below:</p>
+{{profile.empDate}}
 {{profile.firstName}}
 {{profile.lastName}}
 {{profile.userEmail}}
 {{profile.posTyp}}
-{{profile.empDate}}
 {{profile.govCont}}
 {{profile.contName}}
 {{profile.govOffice}}
+{{profile.mission}}
+{{profile.country}}
+{{profile.post}}
+{{profile.reason}}
 {{profile.coder}}
 {{profile.coderDes}}
 {{profile.proCoder}}
 {{profile.proCoderDes}}
+{{profile.cmExp}}
+{{profile.cmExpDes}}
 
 <h1><img src="images/1086321.png" alt="Smiley face" width="75" height="75">GitLab User Application</h1>
   
@@ -123,43 +129,52 @@
 	<p>(TODO:Test remove prior to deployment) Content: Mission={{country}}, Country={{city}}, Post={{suburb}}</p>
 	</div>
 
+<h3>Why do you want a GitLab account?</h3>
+	<div class="form-USR row-md-3"> 
+          <label for="post">7. Please enter reason for wanting an account</label>
+          <!-- Added TextFeild for Reason why user wants an account... JJ -->         
+		  <textarea ng-model="profile.reason" class="form-control" ng-trim="false" placeholder="why do you want access?" maxlength="1500" autocomplete="on"></textarea>
+		   <span class="help-block"></span>
+        </div>
+
+
 
 <h3>Summary of qualifications:</h3>
 	<div class="form-USR">
-	<label for="proCode">7. I have written code or been involved in IT (either personally or professionally)? 
+	<label for="proCode">8. I have written code or been involved in IT (either personally or professionally)? 
 	Checkbox for yes: </label>
     	<input id="coder" type="checkbox" ng-model="profile.coder"
            ng-true-value="Yes" ng-false-value="No"/>    	
      	</div>
 
         <div class="form-USR"> 
-          <label for="post">7a. Please describe?</label>
+          <label for="post">8a. Please describe?</label>
           <input ng-model="profile.coderDes" class="form-control" id="post" placeholder="Add Details" autocomplete="on">
           <span class="help-block"></span> 
         </div>
 
 	<div class="form-USR">
-	<label for="proCode">8. I have you developed code, scripts, or other IT solutions for use on or with CA systems? 
+	<label for="proCode">9. I have you developed code, scripts, or other IT solutions for use on or with CA systems? 
 	Checkbox for yes:</label>
     	<input id="proCoder" type="checkbox" ng-model="profile.proCoder"
            ng-true-value="Yes" ng-false-value="No"/>    	
      	</div>
 
 	 <div class="form-USR"> 
-          <label for="post">8a. Please describe?</label>
+          <label for="post">9a. Please describe?</label>
           <input ng-model="profile.proCoderDes" class="form-control" id="proCoderDes" placeholder="Add Details" autocomplete="on">
           <span class="help-block"></span> 
         </div>
 
 	<div class="form-USR">
-	<label for="cmExp">9. I have experience with GitHub, GitLab, open source communities or version control software? 
+	<label for="cmExp">10. I have experience with GitHub, GitLab, open source communities or version control software? 
 	Checkbox for yes:</label>
     	<input id="cmExp" type="checkbox" ng-model="profile.cmExp"
            ng-true-value="Yes" ng-false-value="No"/>    	
      	</div>
 
 	<div class="form-USR"> 
-          <label for="post">9a. Please describe?</label>
+          <label for="post">10a. Please describe?</label>
           <input ng-model="profile.cmExpDes" class="form-control" id="cmExpDes" placeholder="Add Details" autocomplete="on">
           <span class="help-block"></span> 
         </div>
