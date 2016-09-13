@@ -28,6 +28,36 @@ alert(JSON.stringify($scope.profile));
 }
 
 function StaticCtrl($scope) {
+
+    $scope.regionValueChanged = function ()
+    {
+        var regionElement = document.getElementById("country");
+        
+        var selectedRegion = regionElement.options[regionElement.selectedIndex].value;
+        if (selectedRegion != '') {
+            console.log(selectedRegion);
+            $scope.selectedRegion = selectedRegion;
+        }
+        else
+        {
+            $scope.selectedRegion = null;
+            $scope.selectedCountry = null;
+            $scope.suburb = null;
+        }
+    }
+    $scope.countryValueChanged = function () {
+        var countryElement = document.getElementById("city");
+        var selectedCountry = countryElement.options[countryElement.selectedIndex].value;
+        if (selectedCountry != '') {
+            console.log(selectedCountry);
+            $scope.selectedCountry = selectedCountry;
+        }
+        else {
+            $scope.selectedCountry = null;
+            $scope.suburb = null;
+        }
+    }
+
     $scope.countries = {
     "WHA": {
         "USA": [

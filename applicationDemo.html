@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="us" ng-app="entryApp">
 <head>
 	<meta charset="utf-8">
@@ -100,13 +100,14 @@
     <p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
     <div>
         <h4>Mission:</h4> 
-        <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries">
+        <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries" ng-change="regionValueChanged()">
           <option value=''>Select</option>
         </select>
     </div>
+
     <div>
         <h4>Country:</h4>
-	 <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities">
+	 <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities"  ng-change="countryValueChanged()">
 	<option value=''>Select</option></select>
     </div>
     <div>
@@ -114,7 +115,7 @@
 	 <select class="form-control" id="suburb" ng-disabled="!suburbs" ng-model="suburb" ng-options="suburb for suburb in suburbs">
 	<option value=''>Select</option></select>        
     </div>
-	<p>TEST Content</p>
+	<p>selected values are {{selectedRegion}} - {{selectedCountry}} - {{suburb}}</p>
   </div>
 
 
