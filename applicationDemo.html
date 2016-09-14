@@ -110,24 +110,27 @@
         </div>
 
 	<div ng-controller="StaticCtrl">
-		<h4><b>6. Please enter your Mission, Country, and Post:</b></h4><p>(TODO:Test remove prior to deployment)This approach may be better when We have a list of the entire dataset. This needs to be connected to the profile.country ect...</p>
-		<div>
-			<h4>6a. Mission:</h4> 
-			<select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries">
-			<option value=''>Select</option></select>
-		</div>
-		<div>
-			<h4>6b. Country:</h4>
-			<select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities">
-			<option value=''>Select</option></select>
-			</div>
-		<div>
-			<h4>6c. Post:</h4>
-			<select class="form-control" id="suburb" ng-disabled="!suburbs" ng-model="suburb" ng-options="suburb for suburb in suburbs">
-			<option value=''>Select</option></select>        
-		</div>
-	<p>(TODO:Test remove prior to deployment) Content: Mission={{country}}, Country={{city}}, Post={{suburb}}</p>
-	</div>
+    <p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB and tested...</p>
+    <div>
+        <h4>Mission:</h4> 
+        <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries" ng-change="regionValueChanged()">
+          <option value=''>Select</option>
+        </select>
+    </div>
+
+    <div>
+        <h4>Country:</h4>
+	 <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities"  ng-change="countryValueChanged()">
+	<option value=''>Select</option></select>
+    </div>
+    <div>
+        <h4>Post:</h4>
+	 <select class="form-control" id="suburb" ng-disabled="!suburbs" ng-model="suburb" ng-options="suburb for suburb in suburbs">
+	<option value=''>Select</option></select>        
+    </div>
+	<p>selected values are {{selectedRegion}} - {{selectedCountry}} - {{suburb}}</p>
+  </div>
+
 
 <h3>Why do you want a GitLab account?</h3>
 	<div class="form-USR row-md-3"> 
