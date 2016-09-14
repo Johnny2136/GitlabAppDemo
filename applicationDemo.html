@@ -132,6 +132,15 @@
 	<p>selected values are {{selectedRegion}} - {{selectedCountry}} - {{suburb}}</p>
   </div>
 
+<h3>Why do you want a GitLab account?</h3>
+	<div class="form-USR row-md-3"> 
+          <label for="post">7. Please enter reason for wanting an account</label>
+          <!-- Added TextFeild for Reason why user wants an account... JJ -->         
+		  <textarea ng-model="profile.reason" class="form-control" ng-trim="false" placeholder="why do you want access?" maxlength="1500" autocomplete="on"></textarea>
+		   <span class="help-block"></span>
+        </div>
+
+
 
 <h3>Summary of qualifications:</h3>
 	<div class="form-USR">
