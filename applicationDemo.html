@@ -46,7 +46,7 @@
 
     <h2>User Information: Please Enter information below:</h2>
 
-	<div class="form-USR col-md-6">
+	<div class="form-USR col-md-2">
           <label for="post"><b>1. Joined CA in?</label>          
           <input type="date" id="empDate" name="empDate" ng-model="profile.empDate"
             class="form-control" placeholder="yyyy-MM-dd" min="1969-01-01" max="2020-01-01" autofocus required />
@@ -58,13 +58,13 @@
            </div></b>
         </div>
 
-        <div class="form-USR col-md-6"> 
+        <div class="form-USR col-md-2"> 
           <label for="uName">2. Enter your first name?</label>
           <input ng-model="profile.firstName" type="text" class="form-control" id="firstName" placeholder="First Name"
 		  autocomplete="on" required>
 	</div>
 
-	<div class="form-USR col-md-6">
+	<div class="form-USR col-md-2">
 	  <label for="uName">2a. Enter your last name?</label>
           <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name"  autocomplete="on" required>          
         </div>
@@ -109,31 +109,37 @@
           <span class="help-block"></span>
         </div>
 
+	<h5><b>6. Please Select your location by Mission, Country, then Post: </b></h5>
+	<div ng-controller="StaticCtrl">
+    	<p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
 
-<div ng-controller="StaticCtrl">
-    <p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
-    <div>
-        <h4>Mission:</h4> 
+
+	<div class="form-USR col-md-2">
+        <label for="country">6a. Mission: </label> 
         <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries" ng-change="regionValueChanged()">
           <option value=''>Select</option>
         </select>
     </div>
 
-    <div>
-        <h4>Country:</h4>
+	<div class="form-USR col-md-4">
+        <label for="city">6b. Country: </label> 
 	 <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities"  ng-change="countryValueChanged()">
 	<option value=''>Select</option></select>
     </div>
-    <div>
-        <h4>Post:</h4>
+
+	<div class="form-USR col-md-6">	
+		<label for="suburb">6c. Post: </label>
 	 <select class="form-control" id="suburb" ng-disabled="!suburbs" ng-model="suburb" ng-options="suburb for suburb in suburbs">
 	<option value=''>Select</option></select>        
     </div>
+<div>
 	<p>selected values are {{selectedRegion}} - {{selectedCountry}} - {{suburb}}</p>
-  </div>
+  
+</div>
 
 <h3>Why do you want a GitLab account?</h3>
-	<div class="form-USR row-md-3"> 
+
+	<div class="form-USR row-md-5"> 
           <label for="post">7. Please enter reason for wanting an account</label>
           <!-- Added TextFeild for Reason why user wants an account... JJ -->         
 		  <textarea ng-model="profile.reason" class="form-control" ng-trim="false" placeholder="why do you want access?" maxlength="1500" autocomplete="on"></textarea>
@@ -143,6 +149,7 @@
 
 
 <h3>Summary of qualifications:</h3>
+
 	<div class="form-USR">
 	<label for="proCode">8. I have written code or been involved in IT (either personally or professionally)? 
 	Checkbox for yes: </label>
