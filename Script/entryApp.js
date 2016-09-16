@@ -96,18 +96,18 @@ $scope.$watch("suburb", function (newValue, oldValue, scope) {
 		        "Honolulu, HI",
 		        "Houston, TX",
 		        "Los Angeles, CA",
-		        "Miami, FL"
-		        "Minneapolis, MN"
-		        "Portsmouth, NH"
-		        "New Orleans, LA"
-		        "New York, NY"
-		        "Philadelphia, PA"
-		        "San Diego, CA"
-	        	"San Francisco, CA"
-		        "San Juan, Puerto Rico"
-		        "Seattle, WA"
-		        "St. Albans, VT"
-	        	"Washington, DC"
+		        "Miami, FL",
+		        "Minneapolis, MN",
+		        "Portsmouth, NH",
+		        "New Orleans, LA",
+		        "New York, NY",
+		        "Philadelphia, PA",
+		        "San Diego, CA",
+	        	"San Francisco, CA",
+		        "San Juan, Puerto Rico",
+		        "Seattle, WA",
+		        "St. Albans, VT",
+	        	"Washington, DC",
 		        "Tucson, AZ"
             ],
             "Brazil": [
