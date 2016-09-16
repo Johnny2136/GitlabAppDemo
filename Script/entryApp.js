@@ -83,7 +83,32 @@ $scope.$watch("suburb", function (newValue, oldValue, scope) {
     $scope.countries = {
         "WHA": {
             "USA": [
-                "DC"
+		        "Hot Springs, AR",
+		        "Atlanta, GA",
+		        "Boston, MA",
+		        "Buffalo, NY",
+		        "Chicago, IL",
+	        	"Aurora, CO",
+	        	"Stamford, CT",
+		        "Dallas, TX",
+		        "Detroit, MI",
+		        "El Paso, TX",
+		        "Honolulu, HI",
+		        "Houston, TX",
+		        "Los Angeles, CA",
+		        "Miami, FL"
+		        "Minneapolis, MN"
+		        "Portsmouth, NH"
+		        "New Orleans, LA"
+		        "New York, NY"
+		        "Philadelphia, PA"
+		        "San Diego, CA"
+	        	"San Francisco, CA"
+		        "San Juan, Puerto Rico"
+		        "Seattle, WA"
+		        "St. Albans, VT"
+	        	"Washington, DC"
+		        "Tucson, AZ"
             ],
             "Brazil": [
                 "Brasilia",
