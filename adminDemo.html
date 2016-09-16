@@ -16,7 +16,16 @@
             background-color: gold;
         }
     </style>
-
+    
+   <script>
+       //Added test for browser compatability jj.
+        var isChromium = window.chrome;
+         if(isChromium){
+           //alert("browser ok"); 
+        } else {
+           alert("This is a responsive HTML5 Webpage.\n It will not display properly unless you use an HTML5 compatable Browser!\n Please use Chrome!");
+        }
+    </script> 
 
 <body ng-app="reportingApp">
 <!-- Header Section -->
