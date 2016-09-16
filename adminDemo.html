@@ -18,12 +18,12 @@
     </style>
 
 
-<body data-ng-app="reportingApp">
+<body ng-app="reportingApp">
 <!-- Header Section -->
  <h1><img src="images/1086321.png" alt="Smiley face" width="75" height="75">GitLab User Administration</h1>
   
 <h3>Admin Report</h3>
-<div id="adminReport"  data-ng-controller="repoCtrl" >
+<div id="adminReport"  ng-controller="repoCtrl" >
 
      
      <table id="report12" class="table table-striped table-bordered table-hover table-condensed">
@@ -57,7 +57,7 @@
             <td><span>{{data.proCoderDes}}</span></td>
             <td><span>{{data.cmExp}}</span></td>
             <td><span>{{data.cmExpDes}}</span></td>
-			<td><span>{{data.approve}}</span></td>
+			<td><span>{{data.approve}}<input type="checkbox" ng-model="profile.approve" ng-change="data.appDate = profile.approve ? '{{date | date:'longDate'}}' : ''"></span></td>
 			<td><span>{{data.appDate}}</span></td>
             
         </tr>
