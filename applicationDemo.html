@@ -16,7 +16,7 @@
 	
 
 </head>
-<body data-ng-controller="entryCtrl" style="padding:9px;">
+<body ng-controller="entryCtrl" style="padding:9px;">
 <!-- Header Section -->
 <p>(TODO:Test remove prior to deployment) Data being stringafied and sent to MongoDB Should appear below:</p>
 {{profile.empDate}}
@@ -68,12 +68,12 @@
 	</div>
 
 
-	<div class="form-USR col-md-2">
+	<div class="form-USR col-md-4">
 	  <label for="uName">2a. Enter your last name?</label>
           <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name"  autocomplete="on" required>          
         </div>
 
-        <div class="form-USR col-md-6">
+        <div class="form-USR col-md-4">
           
 	  <label for="userEmail">3. Enter your State Department email address?</label>
 
@@ -158,7 +158,7 @@
 	<label for="proCode">8. I have written code or been involved in IT (either personally or professionally)? 
 	Checkbox for yes: </label>
     	<input id="coder" type="checkbox" ng-model="profile.coder"
-           ng-true-value="Yes" ng-false-value="No"/>    	
+           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
      	</div>
 
         <div class="form-USR"> 
@@ -171,7 +171,7 @@
 	<label for="proCode">9. I have you developed code, scripts, or other IT solutions for use on or with CA systems? 
 	Checkbox for yes:</label>
     	<input id="proCoder" type="checkbox" ng-model="profile.proCoder"
-           ng-true-value="Yes" ng-false-value="No"/>    	
+           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
      	</div>
 
 	 <div class="form-USR"> 
@@ -184,7 +184,7 @@
 	<label for="cmExp">10. I have experience with GitHub, GitLab, open source communities or version control software? 
 	Checkbox for yes:</label>
     	<input id="cmExp" type="checkbox" ng-model="profile.cmExp"
-           ng-true-value="Yes" ng-false-value="No"/>    	
+           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
      	</div>
 
 	<div class="form-USR"> 
