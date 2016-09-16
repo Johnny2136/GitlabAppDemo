@@ -1,8 +1,6 @@
-'use strict';
-
 var reportingApp = angular.module('reportingApp', []);
-
-function repoCtrl($scope, $http) {
+'use strict';
+reportingApp.controller('repoCtrl', function($scope, $http) {
 
         $http({
             method: 'GET',
@@ -14,19 +12,19 @@ function repoCtrl($scope, $http) {
 
   
 
-/*
 
+/*
         $http({
             method: 'POST',
-	    data: JSON.stringify({"catagory": " IV","txdate": "2014-05-01","activity": "codeing","hours": "8","comment": "yada yada yada","mission": "CST","country": "USA","post": "DC","user": "Johnny"}),
-	    contentType: "application/json",
+            data: JSON.stringify({"catagory": " IV","txdate": "2014-05-01","activity": "codeing","hours": "8","comment": "yada yada yada","mission": "CST","country": "USA","post": "DC","user": "Johnny"}),
+            contentType: "application/json",
             url: 'https://api.mongolab.com/api/1/databases/apptest/collections/timekeepingEntries?apiKey=sXsYo54JNRbcU9mm5RHrCGqd21hOY2lC'
         }).success(function(data, status) {
             alert("data was successfully added");
         }).error(function(data, status, headers, config) {
-		alert("there was an error adding data");
-    });
+            alert("there was an error adding data");
+        });
 */
-
-}
+    $scope.date = new Date();
+});
 
