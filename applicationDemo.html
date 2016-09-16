@@ -16,21 +16,28 @@
 	
 
 </head>
-<body data-ng-controller="entryCtrl" style="padding:9px;">
+<body ng-controller="entryCtrl" style="padding:9px;">
 <!-- Header Section -->
-<p>Test Data being stringafied and sent to MongoDB Should appear below:</p>
+<p>(TODO:Test remove prior to deployment) Data being stringafied and sent to MongoDB Should appear below:</p>
+{{profile.empDate}}
 {{profile.firstName}}
-
 {{profile.lastName}}
 {{profile.userEmail}}
 {{profile.posTyp}}
-{{profile.empDate}}
 {{profile.govCont}}
 {{profile.contName}}
+{{profile.govOffice}}
+{{profile.mission}}
+{{profile.country}}
+{{profile.post}}
+{{profile.reason}}
 {{profile.coder}}
 {{profile.coderDes}}
 {{profile.proCoder}}
 {{profile.proCoderDes}}
+{{profile.cmExp}}
+{{profile.cmExpDes}}
+
 
 <h1><img src="images/1086321.png" alt="Smiley face" width="75" height="75">GitLab User Application</h1>
   
@@ -38,12 +45,14 @@
     
   <div><FORM-USR>
 
+
+
     <h2>User Information: Please Enter information below:</h2>
 
-	<div class="form-USR">
+	<div class="form-USR col-md-2">
           <label for="post"><b>1. Joined CA in?</label>          
           <input type="date" id="empDate" name="empDate" ng-model="profile.empDate"
-            placeholder="yyyy-MM-dd" min="1969-01-01" max="2020-01-01"  required />
+            class="form-control" placeholder="yyyy-MM-dd" min="1969-01-01" max="2020-01-01" autofocus required />
         <div role="alert">
         <span class="error" ng-show="myForm.input.$error.required">
             Required!</span>
@@ -52,19 +61,21 @@
            </div></b>
         </div>
 
-        <div class="form-USR col-md-6"> 
+        <div class="form-USR col-md-2"> 
           <label for="uName">2. Enter your first name?</label>
-          <input ng-model="profile.firstName" type="text" class="form-control" id="firstName" placeholder="First Name"  autofocus autocomplete="on" required>
+          <input ng-model="profile.firstName" type="text" class="form-control" id="firstName" placeholder="First Name"
+		  autocomplete="on" required>
 	</div>
 
-	<div class="form-USR col-md-6">
-	  <label for="uName">3. Enter your last name?</label>
-          <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name"   autocomplete="on" required>          
+
+	<div class="form-USR col-md-4">
+	  <label for="uName">2a. Enter your last name?</label>
+          <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name"  autocomplete="on" required>          
         </div>
 
-        <div class="form-USR col-md-6">
+        <div class="form-USR col-md-4">
           
-	  <label for="userEmail">4. Enter your State Department email address?</label>
+	  <label for="userEmail">3. Enter your State Department email address?</label>
 
           <input ng-model="profile.userEmail" type="email"class="form-control" id="userEmail" placeholder="government.email@address" >
 
@@ -73,7 +84,7 @@
         </div>
       
     	<div class="form-USR col-md-6">
-          <label for="post">5. Enter your Position?</label>          
+          <label for="post">4. Enter your Position?</label>          
           <input ng-model="profile.posTyp" class="form-control" id="posTyp" placeholder="Position with State" autocomplete="on">
           <span class="help-block"></span>
         </div>
@@ -81,94 +92,103 @@
 
 
         <div class="form-USR col-md-6">
-          <label for="post"> 6. CA Employee or Contractor?</label><br>
-          <select name="govCont" id="govCont" ng-model="profile.govCont">
+          <label for="post">5. CA Employee or Contractor?</label><br>
+          <select name="govCont" id="govCont" class="form-control" ng-model="profile.govCont">
           <option value="">---Please select---</option> <!-- not selected / blank option -->
           <option value="Contractor">Contractor</option> 
           <option value="Government">Government</option>
-          </select>
+          </select> 
           <span class="help-block"></span>
         </div>
 
         <div class="form-USR col-md-6">
-          <label for="post">6a. If contractor list for whom?</label>          
+          <label for="post">5a. If contractor list for whom?</label>          
           <input ng-model="profile.contName" class="form-control" id="contName" placeholder="company" autocomplete="on">
           <span class="help-block"></span>
         </div>
 
-<div ng-controller="StaticCtrl">
-    <p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
-    <div>
-        <h4>Mission:</h4> 
-        <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries">
+		<div class="form-USR col-md-6">
+          <label for="post">5b. If government list your office?</label>          
+          <input ng-model="profile.govOffice" class="form-control" id="govOffice" placeholder="Bureau and Office" autocomplete="on">
+          <span class="help-block"></span>
+        </div>
+
+	<h5><b>6. Please Select your location by Mission, Country, then Post: </b></h5>
+	<div ng-controller="StaticCtrl">
+    	<p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
+
+
+	<div class="form-USR col-md-2">
+        <label for="country">6a. Mission: </label> 
+        <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries" ng-change="regionValueChanged()">
           <option value=''>Select</option>
         </select>
     </div>
-    <div>
-        <h4>Country:</h4>
-	 <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities">
+
+	<div class="form-USR col-md-4">
+        <label for="city">6b. Country: </label> 
+	 <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities"  ng-change="countryValueChanged()">
 	<option value=''>Select</option></select>
     </div>
-    <div>
-        <h4>Post:</h4>
+
+	<div class="form-USR col-md-6">	
+		<label for="suburb">6c. Post: </label>
 	 <select class="form-control" id="suburb" ng-disabled="!suburbs" ng-model="suburb" ng-options="suburb for suburb in suburbs">
 	<option value=''>Select</option></select>        
     </div>
-	<p>TEST Content</p>
-  </div>
+<div>
+	<p>selected values are {{selectedRegion}} - {{selectedCountry}} - {{suburb}}</p>
+  
+</div>
+
+<h3>Why do you want a GitLab account?</h3>
+
+	<div class="form-USR row-md-5"> 
+          <label for="post">7. Please enter reason for wanting an account</label>
+          <!-- Added TextFeild for Reason why user wants an account... JJ -->         
+		  <textarea ng-model="profile.reason" class="form-control" ng-trim="false" placeholder="why do you want access?" maxlength="1500" autocomplete="on"></textarea>
+		   <span class="help-block"></span>
+        </div>
+
 
 
 <h3>Summary of qualifications:</h3>
+
 	<div class="form-USR">
-	<label for="proCode">7. I have written code or been involved in IT (either personally or professionally)? </label>
+	<label for="proCode">8. I have written code or been involved in IT (either personally or professionally)? 
+	Checkbox for yes: </label>
     	<input id="coder" type="checkbox" ng-model="profile.coder"
-           ng-true-value="Yes" ng-false-value="No"/>    	
+           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
      	</div>
 
-        <!--<div class="form-USR"> 
-          <label for="post">Have you ever written code or been involved in IT (either personally or professionally)?</label>
-          <input ng-model="profile.coder" class="form-control" id="coder" placeholder="Yes / No" autocomplete="on">          
-          <span class="help-block"></span>
-        </div>-->
-
         <div class="form-USR"> 
-          <label for="post">7a. Please describe?</label>
+          <label for="post">8a. Please describe?</label>
           <input ng-model="profile.coderDes" class="form-control" id="post" placeholder="Add Details" autocomplete="on">
           <span class="help-block"></span> 
         </div>
 
 	<div class="form-USR">
-	<label for="proCode">8. I have you developed code, scripts, or other IT solutions for use on or with CA systems? </label>
+	<label for="proCode">9. I have you developed code, scripts, or other IT solutions for use on or with CA systems? 
+	Checkbox for yes:</label>
     	<input id="proCoder" type="checkbox" ng-model="profile.proCoder"
-           ng-true-value="Yes" ng-false-value="No"/>    	
+           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
      	</div>
 
-	<!--<div class="form-USR"> 
-          <label for="post">Have you ever developed code, scripts, or other IT solutions for use on or with CA systems?</label>
-          <input ng-model="profile.proCoder" class="form-control" id="proCoder" placeholder="Yes / No" autocomplete="on">          
-          <span class="help-block"></span>
-        </div>-->
-
-        <div class="form-USR"> 
-          <label for="post">8a. Please describe?</label>
+	 <div class="form-USR"> 
+          <label for="post">9a. Please describe?</label>
           <input ng-model="profile.proCoderDes" class="form-control" id="proCoderDes" placeholder="Add Details" autocomplete="on">
           <span class="help-block"></span> 
         </div>
 
 	<div class="form-USR">
-	<label for="cmExp">9. I have experience with GitHub, GitLab, open source communities or version control software? </label>
+	<label for="cmExp">10. I have experience with GitHub, GitLab, open source communities or version control software? 
+	Checkbox for yes:</label>
     	<input id="cmExp" type="checkbox" ng-model="profile.cmExp"
-           ng-true-value="Yes" ng-false-value="No"/>    	
+           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
      	</div>
 
-	<!--<div class="form-USR"> 
-          <label for="post"> I have experience with GitHub, GitLab, open source communities or version control software?</label>
-          <input ng-model="profile.cmExp" class="form-control" id="cmExp" placeholder="Yes / No" autocomplete="on">          
-          <span class="help-block"></span>
-        </div>-->
-
-        <div class="form-USR"> 
-          <label for="post">9a. Please describe?</label>
+	<div class="form-USR"> 
+          <label for="post">10a. Please describe?</label>
           <input ng-model="profile.cmExpDes" class="form-control" id="cmExpDes" placeholder="Add Details" autocomplete="on">
           <span class="help-block"></span> 
         </div>
@@ -187,10 +207,8 @@ CA, most likely due to either improper use of GitLab or lack of constructive act
       
 </div>
 
-
         <script src="Script/angular.min.js" type="text/javascript"></script>        
         <script src="Script/entryApp.js"></script>
-
 
 </body>
 </html>
