@@ -124,7 +124,7 @@
         </div>
 
 	<h5><b>6. Please Select your location by Mission, Country, then Post: </b></h5>
-	<div ng-controller="StaticCtrl">
+	<div>
     	<p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
 
 
@@ -207,8 +207,8 @@
 
 <div class="form-USR">
       
-        <button class="btn btn-lg btn-primary" ng-click="postData();" >Submit Data </button>
-        <button class="btn btn-lg btn-primary"onClick="history.go(0)"type="Clear">Reset Form Data</button>
+        <button class="btn btn-lg btn-primary" ng-click="postData()" >Submit Data </button>
+        <button class="btn btn-lg btn-primary" ng-click="resetForm()" >Reset Form Data</button>
 
       </form>
 <p>Upon approval of this application, you will be granted a renewable 12 month license to access CA&#39s GitLab. Your access is at will and can be revoked at any time by 

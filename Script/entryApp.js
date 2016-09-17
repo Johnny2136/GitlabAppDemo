@@ -3,29 +3,39 @@
 entryApp.controller("entryCtrl", function($scope, $http) {
     "use strict";
 
-    var profile = {"firstName":"","lastName":""};
+    var profile = {
+        "firstName": "",
+        "lastName": ""
+    };
 
     $scope.profile = profile;
+    profile.empDate = new Date();
 
-    $scope.$on("missionChangedEvent", function(event, args) {
-        profile.mission = args;
-        console.log("event received " + event + " - " + args);
-    });
+    $scope.resetForm = function () {
 
-    $scope.$on("countryChangedEvent", function(event, args) {
-        profile.country = args;
-        console.log("event received " + event + " - " + args);
-    });
-
-    $scope.$on("postChangedEvent", function(event, args) {
-        profile.post = args;
-        console.log("event received " + event + " - " + args);
-    });
+        profile.empDate = new Date();
+        profile.firstName = "";
+        profile.lastName = "";
+        profile.userEmail = "";
+        profile.posTyp = "";
+        profile.govCont = "";
+        profile.contName = "";
+        profile.govOffice = "";
+        profile.mission = "";
+        profile.country = "";
+        profile.post = "";
+        profile.reason = "";
+        profile.coder = "";
+        profile.coderDes = "";
+        profile.proCoder = "";
+        profile.proCoderDes = "";
+        profile.cmExp = "";
+        profile.cmExpDes = "";
+    };
 
 
     $scope.postData = function() {
 
-        alert(JSON.stringify($scope.profile));
 
         $http({
             method: "POST",
@@ -42,26 +52,31 @@ entryApp.controller("entryCtrl", function($scope, $http) {
                 alert("there was an error adding data");
             });
 
-        };
+        $scope.resetForm();
 
-});
+    };
 
-entryApp.controller("StaticCtrl", function($scope) {
+    
 
-    $scope.regionValueChanged = function (){
+    $scope.regionValueChanged = function () {
         var regionElement = document.getElementById("country");
         var selectedRegion = regionElement.options[regionElement.selectedIndex].text;
         if (selectedRegion !== '') {
             console.log(selectedRegion);
             $scope.selectedRegion = selectedRegion;
             $scope.$emit("missionChangedEvent", selectedRegion);
+            profile.mission = selectedRegion;
+
         }
-        else{
+        else {
             $scope.selectedRegion = null;
             $scope.selectedCountry = null;
             $scope.suburb = null;
             $scope.$emit("missionChangedEvent", null);
+            profile.mission = null;
         }
+
+
     };
     $scope.countryValueChanged = function () {
 
@@ -70,18 +85,22 @@ entryApp.controller("StaticCtrl", function($scope) {
         if (selectedCountry !== '') {
             console.log(selectedCountry);
             $scope.selectedCountry = selectedCountry;
-            $scope.$emit("countryChangedEvent", selectedCountry);
+            profile.country = selectedCountry;
+           
         }
         else {
             $scope.selectedCountry = null;
             $scope.suburb = null;
-            $scope.$emit("countryChangedEvent", null);
+            profile.country = null;
         }
     };
 
-$scope.$watch("suburb", function (newValue, oldValue, scope) {
-    $scope.$emit("postChangedEvent", newValue);
-});
+    $scope.$watch("suburb", function (newValue, oldValue, scope) {
+        profile.post = newValue;
+
+    });
+
+
     $scope.countries = {
         "AF": {
             "Angola": [
