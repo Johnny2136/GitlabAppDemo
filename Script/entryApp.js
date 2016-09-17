@@ -1,4 +1,4 @@
-﻿var entryApp = angular.module("entryApp", []);
+var entryApp = angular.module("entryApp", []);
 
 entryApp.controller("entryCtrl", function($scope, $http) {
     "use strict";
@@ -47,6 +47,9 @@ entryApp.controller("entryCtrl", function($scope, $http) {
                 alert("data was successfully added");
                 //Clears the form after post... jj
                 $scope.profile = null;
+                $scope.selectedRegion = null;
+                $scope.selectedCountry = null;
+                $scope.suburb = null;
 
             }).error(function(data, status, headers, config) {
                 alert("there was an error adding data");
@@ -129,7 +132,7 @@ entryApp.controller("entryCtrl", function($scope, $http) {
                 "Bangui"
             ],
             "Chad": [
-                "N�djamena"
+                "N'djamena"
             ],
             "Congo": [
                 "Brazzaville"
@@ -516,7 +519,7 @@ entryApp.controller("entryCtrl", function($scope, $http) {
             ],
             "United States": [
                 "New York"
-            ],
+            ]
         },
         "NEA": {
             "Algeria": [
@@ -626,32 +629,32 @@ entryApp.controller("entryCtrl", function($scope, $http) {
         },
         "WHA": {
             "USA": [
-    "Hot Springs, AR",
-    "Atlanta, GA",
-    "Boston, MA",
-    "Buffalo, NY",
-    "Chicago, IL",
-    "Aurora, CO",
-    "Stamford, CT",
-    "Dallas, TX",
-    "Detroit, MI",
-    "El Paso, TX",
-    "Honolulu, HI",
-    "Houston, TX",
-    "Los Angeles, CA",
-    "Miami, FL",
-    "Minneapolis, MN",
-    "Portsmouth, NH",
+    "Hot Springs  AR",
+    "Atlanta  GA",
+    "Boston  MA",
+    "Buffalo  NY",
+    "Chicago  IL",
+    "Aurora  CO",
+    "Stamford  CT",
+    "Dallas  TX",
+    "Detroit  MI",
+    "El Paso  TX",
+    "Honolulu  HI",
+    "Houston  TX",
+    "Los Angeles  CA",
+    "Miami  FL",
+    "Minneapolis  MN",
+    "Portsmouth  NH",
     "New Orleans, LA",
-    "New York, NY",
-    "Philadelphia, PA",
-    "San Diego, CA",
-    "San Francisco, CA",
-    "San Juan, Puerto Rico",
-    "Seattle, WA",
-    "St. Albans, VT",
-    "Washington, DC",
-    "Tucson, AZ"
+    "New York  NY",
+    "Philadelphia  PA",
+    "San Diego  CA",
+    "San Francisco  CA",
+    "San Juan  Puerto Rico",
+    "Seattle  WA",
+    "St. Albans  VT",
+    "Washington  DC",
+    "Tucson  AZ"
             ],
             "Argentina": [
                 "Buenos Aires"
@@ -705,7 +708,7 @@ entryApp.controller("entryCtrl", function($scope, $http) {
                 "San Salvador"
             ],
             "Grenada": [
-                "St. George�s"
+                "St. George's"
             ],
             "Guatemala": [
                 "Guatemala City"
