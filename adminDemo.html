@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GitLab Admin Reporting</title>
+    <title>DESK GitLab Admin Reporting</title>
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<script src="Script/jquery-3.1.0.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,7 @@
 <tbody>
         <tr data-ng-repeat="data in periodic | filter:{empDate:dataEmpDate} | filter:{govCont:dataGovCont} | filter:{coder:dataCoder} | filter:{proCoder:dataProCoder}| filter:{cmExp:datacmExp} | orderBy:dataOrder">
             
-            <td><span>{{data.empDate | date: "yyyy-MM-dd"}}</span></td>
+            <td><span>{{data.empDate | date: 'M/d/yyyy'}}</span></td>
             <td><span>{{data.lastName}}</span></td>
 			<td><span>{{data.firstName}}</span></td>
 			<td><span>{{data.userEmail}}</span></td>
@@ -69,7 +69,7 @@
             <td><span>{{data.proCoderDes}}</span></td>
             <td><span>{{data.cmExp}}</span></td>
             <td><span>{{data.cmExpDes}}</span></td>
-			<td><span>{{data.approve}}<input type="checkbox" ng-model="profile.approve" ng-change="data.appDate = profile.approve ? '{{date | date:'longDate'}}' : ''"></span></td>
+			<td><span>{{data.approve}}<input type="checkbox" ng-model="profile.approve" ng-change="data.appDate = profile.approve ? '{{date | date: 'M/d/yyyy'}}' : ''"></span></td>
 			<td><span>{{data.appDate}}</span></td>
             
         </tr>
@@ -89,12 +89,9 @@
 
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="Script/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="Script/reportingApp.js"></script>
 
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
 
 <button onclick="makeCSV()">Download</button>
 <div id="downloadLink"></div>
