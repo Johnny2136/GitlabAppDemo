@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DESK GitLab Admin Reporting</title>
+    <title>GitLab Admin Reporting</title>
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<script src="Script/jquery-3.1.0.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +44,7 @@
     <th>empDate</th><th>User Last Name</th><th>User First Name</th><th>User Email</th><th>Position type</th><th>Gov/Cont</th>
 	<th>Contract Name</th><th>Government Office</th><th>Mission</th><th>Country</th><th>Post</th>
     <th>Reason</th><th>Coder</th><th>Description</th><th>Professional Coder</th><th>Description</th>
-    <th>Git Experiance</th><th>Description</th><th>Approved</th><th>date approved</th>
+    <th>Git Experiance</th><th>Description</th><th>Approved</th><th>Click to approve</th><th>date approved</th>
   </tr>        
 </thead>
 
@@ -69,8 +69,9 @@
             <td><span>{{data.proCoderDes}}</span></td>
             <td><span>{{data.cmExp}}</span></td>
             <td><span>{{data.cmExpDes}}</span></td>
-			<td><span>{{data.approve}}<input type="checkbox" ng-model="profile.approve" ng-change="data.appDate = profile.approve ? '{{date | date: 'M/d/yyyy'}}' : ''"></span></td>
-			<td><span>{{data.appDate}}</span></td>
+			<td><span>{{data.approve}}</span></td>
+			<td><input type="checkbox" ng-model="profile.approve" ng-change="profile.appDate = profile.approve ? '{{date | date: 'M/d/yyyy'}}' : ''"></td>
+			<td><span>{{profile.appDate}}</span></td>
             
         </tr>
 
