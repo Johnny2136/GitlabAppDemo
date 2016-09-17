@@ -35,6 +35,8 @@ entryApp.controller("entryCtrl", function($scope, $http) {
             }).success(function(data, status) {
 
                 alert("data was successfully added");
+                //Clears the form after post... jj
+                $scope.profile = null;
 
             }).error(function(data, status, headers, config) {
                 alert("there was an error adding data");
