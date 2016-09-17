@@ -28,7 +28,7 @@
 <body ng-controller="entryCtrl" style="padding:9px;">
 <!-- Header Section -->
 <p>(TODO:Test remove prior to deployment) Data being stringafied and sent to MongoDB Should appear below:</p>
-{{profile.empDate}}
+{{profile.empDate | date: "yyyy-MM-dd"}}
 {{profile.firstName}}
 {{profile.lastName}}
 {{profile.userEmail}}
