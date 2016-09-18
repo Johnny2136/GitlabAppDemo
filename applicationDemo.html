@@ -51,171 +51,178 @@
 
 <h1><img src="images/1086321.png" alt="Smiley face" width="75" height="75">GitLab User Application</h1>
   
-<form class="form-USR">
-    
-  <div><FORM-USR>
+    <form class="form-USR">
+
+                 <h2>User Information: Please Enter information below:</h2>
+
+                <div class="form-USR col-md-2">
+                    <label for="post"><b>1. Joined CA in?</label>
+                    <input type="date" id="empDate" name="empDate" ng-model="profile.empDate"
+                           class="form-control" placeholder="yyyy-MM-dd" min="1969-01-01" max="2020-01-01" autofocus required />
+                    <div role="alert">
+                        <span class="error" ng-show="myForm.input.$error.required">
+                            Required!
+                        </span>
+                        <span class="error" ng-show="myForm.input.$error.date">
+                            Not a valid date!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-USR col-md-2">
+                    <label for="uName">2. Enter your first name?</label>
+                    <input ng-model="profile.firstName" type="text" class="form-control" id="firstName" placeholder="First Name"
+                           autocomplete="on" required>
+                </div>
+
+
+                <div class="form-USR col-md-4">
+                    <label for="uName">2a. Enter your last name?</label>
+                    <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name" autocomplete="on" required>
+                </div>
+
+                <div class="form-USR col-md-4">
+
+                    <label for="userEmail">3. Enter your State Department email address?</label>
+
+                    <input ng-model="profile.userEmail" type="email" class="form-control" id="userEmail" placeholder="government.email@address">
+
+                    <span class="help-block"></span>
+
+                </div>
+
+                <div class="form-USR col-md-6">
+                    <label for="post">4. Enter your Position?</label>
+                    <input ng-model="profile.posTyp" class="form-control" id="posTyp" placeholder="Position with State" autocomplete="on">
+                    <span class="help-block"></span>
+                </div>
 
 
 
-    <h2>User Information: Please Enter information below:</h2>
+                <div class="form-USR col-md-6">
+                    <label for="post">5. CA Employee or Contractor?</label><br>
+                    <select name="govCont" id="govCont" class="form-control" ng-model="profile.govCont">
+                        <option value="">---Please select---</option> <!-- not selected / blank option -->
+                        <option value="Contractor">Contractor</option>
+                        <option value="Government">Government</option>
+                    </select>
+                    <span class="help-block"></span>
+                </div>
 
-	<div class="form-USR col-md-2">
-          <label for="post"><b>1. Joined CA in?</label>          
-          <input type="date" id="empDate" name="empDate" ng-model="profile.empDate"
-            class="form-control" placeholder="yyyy-MM-dd" min="1969-01-01" max="2020-01-01" autofocus required />
-        <div role="alert">
-        <span class="error" ng-show="myForm.input.$error.required">
-            Required!</span>
-        <span class="error" ng-show="myForm.input.$error.date">
-            Not a valid date!</span>
-           </div></b>
-        </div>
+                <div class="form-USR col-md-6">
+                    <label for="post">5a. If contractor list for whom?</label>
+                    <input ng-model="profile.contName" class="form-control" id="contName" placeholder="company" autocomplete="on">
+                    <span class="help-block"></span>
+                </div>
 
-        <div class="form-USR col-md-2"> 
-          <label for="uName">2. Enter your first name?</label>
-          <input ng-model="profile.firstName" type="text" class="form-control" id="firstName" placeholder="First Name"
-		  autocomplete="on" required>
-	</div>
+                <div class="form-USR col-md-6">
+                    <label for="post">5b. If government list your office?</label>
+                    <input ng-model="profile.govOffice" class="form-control" id="govOffice" placeholder="Bureau and Office" autocomplete="on">
+                    <span class="help-block"></span>
+                </div>
 
-
-	<div class="form-USR col-md-4">
-	  <label for="uName">2a. Enter your last name?</label>
-          <input ng-model="profile.lastName" class="form-control" id="lastName" placeholder="Last Name"  autocomplete="on" required>          
-        </div>
-
-        <div class="form-USR col-md-4">
-          
-	  <label for="userEmail">3. Enter your State Department email address?</label>
-
-          <input ng-model="profile.userEmail" type="email"class="form-control" id="userEmail" placeholder="government.email@address" >
-
-          <span class="help-block"></span>
-
-        </div>
-      
-    	<div class="form-USR col-md-6">
-          <label for="post">4. Enter your Position?</label>          
-          <input ng-model="profile.posTyp" class="form-control" id="posTyp" placeholder="Position with State" autocomplete="on">
-          <span class="help-block"></span>
-        </div>
+                <h5><b>6. Please Select your location by Mission, Country, then Post: </b></h5>
+                <div>
+                    <p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
 
 
+                    <div class="form-USR col-md-2">
+                        <label for="country">6a. Mission: </label>
+                        <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries" ng-change="regionValueChanged()">
+                            <option value=''>Select</option>
+                        </select>
+                    </div>
 
-        <div class="form-USR col-md-6">
-          <label for="post">5. CA Employee or Contractor?</label><br>
-          <select name="govCont" id="govCont" class="form-control" ng-model="profile.govCont">
-          <option value="">---Please select---</option> <!-- not selected / blank option -->
-          <option value="Contractor">Contractor</option> 
-          <option value="Government">Government</option>
-          </select> 
-          <span class="help-block"></span>
-        </div>
+                    <div class="form-USR col-md-4">
+                        <label for="city">6b. Country: </label>
+                        <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities" ng-change="countryValueChanged()">
+                            <option value=''>Select</option>
+                        </select>
+                    </div>
 
-        <div class="form-USR col-md-6">
-          <label for="post">5a. If contractor list for whom?</label>          
-          <input ng-model="profile.contName" class="form-control" id="contName" placeholder="company" autocomplete="on">
-          <span class="help-block"></span>
-        </div>
+                    <div class="form-USR col-md-6">
+                        <label for="suburb">6c. Post: </label>
+                        <select class="form-control" id="suburb" ng-disabled="!suburbs" ng-model="suburb" ng-options="suburb for suburb in suburbs">
+                            <option value=''>Select</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p>selected values are {{selectedRegion}} - {{selectedCountry}} - {{suburb}}</p>
 
-		<div class="form-USR col-md-6">
-          <label for="post">5b. If government list your office?</label>          
-          <input ng-model="profile.govOffice" class="form-control" id="govOffice" placeholder="Bureau and Office" autocomplete="on">
-          <span class="help-block"></span>
-        </div>
+                    </div>
 
-	<h5><b>6. Please Select your location by Mission, Country, then Post: </b></h5>
-	<div>
-    	<p>(TEST TODO:)This approach may be better when We have a list of the entire dataset. This needs to be connected to the DB</p>
+                    <h3>Why do you want a GitLab account?</h3>
 
-
-	<div class="form-USR col-md-2">
-        <label for="country">6a. Mission: </label> 
-        <select class="form-control" id="country" ng-model="cities" ng-options="country for (country, cities) in countries" ng-change="regionValueChanged()">
-          <option value=''>Select</option>
-        </select>
-    </div>
-
-	<div class="form-USR col-md-4">
-        <label for="city">6b. Country: </label> 
-	 <select class="form-control" id="city" ng-disabled="!cities" ng-model="suburbs" ng-options="city for (city, suburbs) in cities"  ng-change="countryValueChanged()">
-	<option value=''>Select</option></select>
-    </div>
-
-	<div class="form-USR col-md-6">	
-		<label for="suburb">6c. Post: </label>
-	 <select class="form-control" id="suburb" ng-disabled="!suburbs" ng-model="suburb" ng-options="suburb for suburb in suburbs">
-	<option value=''>Select</option></select>        
-    </div>
-<div>
-	<p>selected values are {{selectedRegion}} - {{selectedCountry}} - {{suburb}}</p>
-  
-</div>
-
-<h3>Why do you want a GitLab account?</h3>
-
-	<div class="form-USR row-md-5"> 
-          <label for="post">7. Please enter reason for wanting an account</label>
-          <!-- Added TextFeild for Reason why user wants an account... JJ -->         
-		  <textarea ng-model="profile.reason" class="form-control" ng-trim="false" placeholder="why do you want access?" maxlength="1500" autocomplete="on"></textarea>
-		   <span class="help-block"></span>
-        </div>
+                    <div class="form-USR row-md-5">
+                        <label for="post">7. Please enter reason for wanting an account</label>
+                        <!-- Added TextFeild for Reason why user wants an account... JJ -->
+                        <textarea ng-model="profile.reason" class="form-control" ng-trim="false" placeholder="why do you want access?" maxlength="1500" autocomplete="on"></textarea>
+                        <span class="help-block"></span>
+                    </div>
 
 
 
-<h3>Summary of qualifications:</h3>
+                    <h3>Summary of qualifications:</h3>
 
-	<div class="form-USR">
-	<label for="proCode">8. I have written code or been involved in IT (either personally or professionally)? 
-	Checkbox for yes: </label>
-    	<input id="coder" type="checkbox" ng-model="profile.coder"
-           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
-     	</div>
+                    <div class="form-USR">
+                        <label for="proCode">
+                            8. I have written code or been involved in IT (either personally or professionally)?
+                            Checkbox for yes:
+                        </label>
+                        <input id="coder" type="checkbox" ng-model="profile.coder"
+                               ng-true-value="'Yes'" ng-false-value="'No'" />
+                    </div>
 
-        <div class="form-USR"> 
-          <label for="post">8a. Please describe?</label>
-          <input ng-model="profile.coderDes" class="form-control" id="post" placeholder="Add Details" autocomplete="on">
-          <span class="help-block"></span> 
-        </div>
+                    <div class="form-USR">
+                        <label for="post">8a. Please describe?</label>
+                        <input ng-model="profile.coderDes" class="form-control" id="post" placeholder="Add Details" autocomplete="on">
+                        <span class="help-block"></span>
+                    </div>
 
-	<div class="form-USR">
-	<label for="proCode">9. I have you developed code, scripts, or other IT solutions for use on or with CA systems? 
-	Checkbox for yes:</label>
-    	<input id="proCoder" type="checkbox" ng-model="profile.proCoder"
-           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
-     	</div>
+                    <div class="form-USR">
+                        <label for="proCode">
+                            9. I have you developed code, scripts, or other IT solutions for use on or with CA systems?
+                            Checkbox for yes:
+                        </label>
+                        <input id="proCoder" type="checkbox" ng-model="profile.proCoder"
+                               ng-true-value="'Yes'" ng-false-value="'No'" />
+                    </div>
 
-	 <div class="form-USR"> 
-          <label for="post">9a. Please describe?</label>
-          <input ng-model="profile.proCoderDes" class="form-control" id="proCoderDes" placeholder="Add Details" autocomplete="on">
-          <span class="help-block"></span> 
-        </div>
+                    <div class="form-USR">
+                        <label for="post">9a. Please describe?</label>
+                        <input ng-model="profile.proCoderDes" class="form-control" id="proCoderDes" placeholder="Add Details" autocomplete="on">
+                        <span class="help-block"></span>
+                    </div>
 
-	<div class="form-USR">
-	<label for="cmExp">10. I have experience with GitHub, GitLab, open source communities or version control software? 
-	Checkbox for yes:</label>
-    	<input id="cmExp" type="checkbox" ng-model="profile.cmExp"
-           ng-true-value="'Yes'" ng-false-value="'No'"/>    	
-     	</div>
+                    <div class="form-USR">
+                        <label for="cmExp">
+                            10. I have experience with GitHub, GitLab, open source communities or version control software?
+                            Checkbox for yes:
+                        </label>
+                        <input id="cmExp" type="checkbox" ng-model="profile.cmExp"
+                               ng-true-value="'Yes'" ng-false-value="'No'" />
+                    </div>
 
-	<div class="form-USR"> 
-          <label for="post">10a. Please describe?</label>
-          <input ng-model="profile.cmExpDes" class="form-control" id="cmExpDes" placeholder="Add Details" autocomplete="on">
-          <span class="help-block"></span> 
-        </div>
-	
-   </div>
+                    <div class="form-USR">
+                        <label for="post">10a. Please describe?</label>
+                        <input ng-model="profile.cmExpDes" class="form-control" id="cmExpDes" placeholder="Add Details" autocomplete="on">
+                        <span class="help-block"></span>
+                    </div>
 
-<div class="form-USR">
-      
-        <button class="btn btn-lg btn-primary" ng-click="postData()" >Submit Data </button>
-        <button class="btn btn-lg btn-primary" ng-click="resetForm()" >Reset Form Data</button>
+                </div>
 
-      </form>
+                <div class="form-USR">
+
+                    <button class="btn btn-lg btn-primary" ng-click="postData()">Submit Data </button>
+                    <button class="btn btn-lg btn-primary" ng-click="resetForm()">Reset Form Data</button>
+                    </div>
+
+    </form>
 <p>Upon approval of this application, you will be granted a renewable 12 month license to access CA&#39s GitLab. Your access is at will and can be revoked at any time by 
 
 CA, most likely due to either improper use of GitLab or lack of constructive activity.</p>    
       
-</div>
+
 
         <script src="Script/angular.min.js" type="text/javascript"></script>        
         <script src="Script/entryApp.js"></script>

@@ -5,7 +5,10 @@ entryApp.controller("entryCtrl", function($scope, $http) {
 
     var profile = {
         "firstName": "",
-        "lastName": ""
+        "lastName": "",
+        "applicationDate":new Date(),
+        "isApproved":false,
+        "approvalDate":''
     };
 
     $scope.profile = profile;
