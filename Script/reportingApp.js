@@ -1,8 +1,5 @@
 var reportingApp = angular.module('reportingApp', []);
 'use strict';
-<<<<<<< HEAD
-reportingApp.controller('repoCtrl', function($scope, $http) {
-=======
 reportingApp.controller('repoCtrl', function ($scope, $http) {
 
 
@@ -38,7 +35,7 @@ reportingApp.controller('repoCtrl', function ($scope, $http) {
 
 
     };
->>>>>>> release/build-2
+
 
         $http({
             method: 'GET',
@@ -46,10 +43,6 @@ reportingApp.controller('repoCtrl', function ($scope, $http) {
 
         }).success(function(data, status) {
             $scope.periodic = data;
-<<<<<<< HEAD
-=======
-
->>>>>>> release/build-2
         });
 
   
