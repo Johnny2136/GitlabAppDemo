@@ -1,6 +1,44 @@
 var reportingApp = angular.module('reportingApp', []);
 'use strict';
+<<<<<<< HEAD
 reportingApp.controller('repoCtrl', function($scope, $http) {
+=======
+reportingApp.controller('repoCtrl', function ($scope, $http) {
+
+
+    $scope.appovalChanged = function(dataIndexId, dataId) {
+        //console.log("event received - dataIndexId is " + dataIndexId);
+
+        if ($scope.periodic[dataIndexId]['isApproved'] == false)
+        {
+            $scope.periodic[dataIndexId]['approvalDate'] = new Date();
+            $scope.periodic[dataIndexId]['isApproved'] = true;
+
+
+        }
+        else
+        {
+            $scope.periodic[dataIndexId]['approvalDate'] = "";
+            $scope.periodic[dataIndexId]['isApproved'] = false;
+
+        }
+
+        $http({
+            data: $scope.periodic[dataIndexId],
+            contentType: "application/json",
+            method: 'POST',
+            url: 'https://api.mongolab.com/api/1/databases/demoapp/collections/applications?apiKey=ED6t0jIvp7Q9dZLFTUXi6aMr8kUDjxFj'
+        }).success(function (data, status) {
+            console.log('data successfully posted');
+
+        }).error(function (data, status) {
+            console.log('data post failed');
+
+        });
+
+
+    };
+>>>>>>> release/build-2
 
         $http({
             method: 'GET',
@@ -8,6 +46,10 @@ reportingApp.controller('repoCtrl', function($scope, $http) {
 
         }).success(function(data, status) {
             $scope.periodic = data;
+<<<<<<< HEAD
+=======
+
+>>>>>>> release/build-2
         });
 
   
