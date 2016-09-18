@@ -31,6 +31,15 @@ entryApp.controller("entryCtrl", function($scope, $http) {
         profile.proCoderDes = "";
         profile.cmExp = "";
         profile.cmExpDes = "";
+        profile.applicationDate = new Date();
+        profile.isApproved = false;
+        profile.approvalDate = null;
+        var countryElement = document.getElementById("country");
+        countryElement.getElementsByTagName('option')[0].selected = 'selected'
+        var cityElement = document.getElementById("city");
+        cityElement.getElementsByTagName('option')[0].selected = 'selected'
+        var suburbElement = document.getElementById("suburb");
+        suburbElement.getElementsByTagName('option')[0].selected = 'selected'
     };
 
 
@@ -97,6 +106,7 @@ entryApp.controller("entryCtrl", function($scope, $http) {
             profile.country = null;
         }
     };
+
 
     $scope.$watch("suburb", function (newValue, oldValue, scope) {
         profile.post = newValue;
