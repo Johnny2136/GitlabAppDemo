@@ -6,12 +6,20 @@ I told the managers I could convert the form to a web application make it mobile
 
 I started off by consulting with my friend and colleague [Vijay Goswami](https://www.linkedin.com/in/vijaygoswami/) owner of XFinion Inc. In deriving the requirements from the paper form and planning design of the web application we choose a typical form layout for example:
 
-  First Name | Last Name     | Location   | Email
------------- | ------------- |----------- | -------------
-Johnny |           Doe |      Japan | Johnny.Doe@agency.gov
-Jane |          Kirk |        USA | Jane.Kirk@agency.gov
+First Name | Last Name     | Location   | Email
+---------- | ------------- |----------- | -------------
+Johnny |    Doe |      Japan | Johnny.Doe@agency.gov
+Jane |     Kirk |        USA | Jane.Kirk@agency.gov
 
-WWe worked together to set up what the key values pairs would be ```firstName: First Name, lastName: Last Name, location: Country, email: eMail```, and how to set up the data store. We worked together to come up with the design of a simple Web form in HTML5 (Using Bootstrap Twitter, JQuery and Angular Java Script, with a cloud based Mongo Lab, Mongo DB backend). The fields would be the defined key value pairs.
+WWe worked together to set up what the key values pairs would be
+
+```JSON
+firstName: First Name, 
+lastName: Last Name, 
+location: Country, 
+email: eMail
+```
+ , and how to set up the data store. We worked together to come up with the design of a simple Web form in HTML5 (Using Bootstrap Twitter, JQuery and Angular Java Script, with a cloud based Mongo Lab, Mongo DB backend). The fields would be the defined key value pairs.
 
 
 
