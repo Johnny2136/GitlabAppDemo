@@ -22,7 +22,7 @@ email: eMail
 and how we would set up the data store. We worked together to come up with the design of a simple Web form in HTML5 (Using Bootstrap Twitter, JQuery and Angular Java Script, with a cloud based Mongo Lab, Mongo DB backend). The fields would be the defined key value pairs. Which would look like the example below:
 
 
-![Bootstrap Form Example](http://spyrestudios.com/wp-content/uploads/29-bootstrap-v3-contact-form-freebie.jpg)
+![Bootstrap Form Example](https://github.com/Johnny2136/GitlabAppDemo/blob/master/Documentation/images/GitlabAppdemo3.png)
 
 
 
