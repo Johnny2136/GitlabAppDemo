@@ -8,8 +8,8 @@ I started off by consulting with my friend and colleague [Vijay Goswami](https:/
 
   First Name | Last Name     | Location   | Email
 ------------ | ------------- |----------- | -------------
-      Johnny |           Doe |      Japan | Johnny.Doe@agency.gov
-        Jane |          Kirk |        USA | Jane.Kirk@agency.gov
+Johnny |           Doe |      Japan | Johnny.Doe@agency.gov
+Jane |          Kirk |        USA | Jane.Kirk@agency.gov
 
 WWe worked together to set up what the key values pairs would be ```firstName: First Name, lastName: Last Name, location: Country, email: eMail```, and how to set up the data store. We worked together to come up with the design of a simple Web form in HTML5 (Using Bootstrap Twitter, JQuery and Angular Java Script, with a cloud based Mongo Lab, Mongo DB backend). The fields would be the defined key value pairs.
 
