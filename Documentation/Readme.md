@@ -70,6 +70,27 @@ $http({
     $scope.date = new Date();
 });
 ```
+Our form controller was:
+```JavaScript
+reportingApp.controller('repoCtrl', function ($scope, $http) {
 
+
+    $scope.appovalChanged = function(dataIndexId, dataId) {
+        //console.log("event received - dataIndexId is " + dataIndexId);
+
+        if ($scope.periodic[dataIndexId]['isApproved'] == false)
+        {
+            $scope.periodic[dataIndexId]['approvalDate'] = new Date();
+            $scope.periodic[dataIndexId]['isApproved'] = true;
+
+
+        }
+        else
+        {
+            $scope.periodic[dataIndexId]['approvalDate'] = "";
+            $scope.periodic[dataIndexId]['isApproved'] = false;
+
+        }
+```
 
 
