@@ -92,5 +92,7 @@ reportingApp.controller('repoCtrl', function ($scope, $http) {
 
         }
 ```
+The HTML code called these controllers See below:
 
+![Bootstrap Form Example](https://github.com/Johnny2136/GitlabAppDemo/blob/master/Documentation/images/GitlabAppdemo2.png)
 
