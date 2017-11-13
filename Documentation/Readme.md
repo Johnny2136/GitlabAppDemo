@@ -37,9 +37,10 @@ The Benefits of Pair programming are:
 * Team building – Working together we produced something of high quality that was able to be transitioned from “proof of concept” to production ready application with no additional coding. It felt very rewarding to be part of this team.
 * It was fun – It was an awesome experience to work side by side with such a talented team mate. I looked forward to each block of code, each change the users requested. It was going so well we had one day sprints at the end. We would deploy the code the user would try it and say well it works well, but how about putting “this functionality” in? We would code it the next day and have a new version ready for them to test. After about a week we had a version the user liked and started using as a production application. 
 
-## The Tools we Used
+## The Tools we used
+We started the project by creating a repository in [GitHub.com](https://github.com/Johnny2136/GitlabAppDemo). This created a collaborating space were we could both contribute off hours where we were not at the same computer. We used GoToMeeting screen sharing sessions proving you don’t have to be sitting next to each other to do pair programming. Most of the sessions were in my cube at work. We used the AWS Cloud as a staging area where the user could test drive the application. We used Mongo lab as the “No-SQL” back end. Once the web form was developed to the user’s satisfaction it was lifted and shifted from GitHub.com to the Governments enterprise GitLab and we altered the programming to use PostgrSQL instead of mongo DB as Mongo DB wasn’t approved on the baseline. I also had to bring in a third Programmer [Lee Baydush](https://www.linkedin.com/in/lee-baydush-b5566470/) to help us with the backend Rest DB services. It was set up and turned over to the government user who was very happy with the application. 
 
-
+## Architecture of the WebApp
 
 
 
