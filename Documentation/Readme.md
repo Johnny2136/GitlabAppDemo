@@ -41,6 +41,35 @@ The Benefits of Pair programming are:
 We started the project by creating a repository in [GitHub.com](https://github.com/Johnny2136/GitlabAppDemo). This created a collaborating space were we could both contribute off hours where we were not at the same computer. We used GoToMeeting screen sharing sessions proving you don’t have to be sitting next to each other to do pair programming. Most of the sessions were in my cube at work. We used the AWS Cloud as a staging area where the user could test drive the application. We used Mongo lab as the “No-SQL” back end. Once the web form was developed to the user’s satisfaction it was lifted and shifted from GitHub.com to the Governments enterprise GitLab and we altered the programming to use PostgrSQL instead of mongo DB as Mongo DB wasn’t approved on the baseline. I also had to bring in a third Programmer [Lee Baydush](https://www.linkedin.com/in/lee-baydush-b5566470/) to help us with the backend Rest DB services. It was set up and turned over to the government user who was very happy with the application. 
 
 ## Architecture of the WebApp
+We used an HTML5 Framework utilizing Bootstrap twitter CSS, Which gave the web form a modern mobile first look and feel, We used AngularJS as the Controller for the forms and “POST” and “GET” commands for transporting the JSON data. This was all we needed for interacting with Mongo Lab all the backend APIs were already in place all we had to do was access the data store.
+
+```JavaScript
+$http({
+            data: $scope.periodic[dataIndexId],
+            contentType: "application/json",
+            method: 'POST',
+            url: 'https://api.mongolab.com/api/1/databases/demoapp/collections/applications?apiKey=ED6t0jIvp7Q9dZLFTUXi6aMr8kUDjxFj'
+        }).success(function (data, status) {
+            console.log('data successfully posted');
+
+        }).error(function (data, status) {
+            console.log('data post failed');
+
+        });
+    };
+
+
+        $http({
+            method: 'GET',
+            url: 'https://api.mongolab.com/api/1/databases/demoapp/collections/applications?apiKey=ED6t0jIvp7Q9dZLFTUXi6aMr8kUDjxFj'
+
+        }).success(function(data, status) {
+            $scope.periodic = data;
+        }); 
+
+    $scope.date = new Date();
+});
+```
 
 
 
