@@ -25,7 +25,7 @@ and how we would set up the data store. We worked together to come up with the d
 
 ![Bootstrap Form Example](https://github.com/Johnny2136/GitlabAppDemo/blob/master/Documentation/images/GitlabAppdemo3.png)
 
-We utilized [pair programming](https://en.wikipedia.org/wiki/Pair_programming), Where two programmers work together at one workstation. One, the driver, writes code while the other, the observer or navigator, reviews each line of code as it is typed in. The two programmers switch roles frequently.(https://en.wikipedia.org/wiki/Pair_programming) As of this writing I think this was the first instance of a Federal employee and a contractor collaborating via pair programming. 
+We utilized [pair programming](https://en.wikipedia.org/wiki/Pair_programming), where two programmers work together at one workstation. One, the driver, writes code while the other, the observer or navigator, reviews each line of code as it is typed in. The two programmers switch roles frequently.(https://en.wikipedia.org/wiki/Pair_programming) As of this writing I think this was the first instance of a Federal employee and a contractor collaborating via pair programming. 
 
 ## The Benefits of Pair programming
 
